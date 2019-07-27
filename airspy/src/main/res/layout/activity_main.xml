@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="70dp"
+    sothree:umanoFadeColor="@android:color/transparent"
+    sothree:umanoShadowHeight="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <SurfaceView
+            android:id="@+id/arLayerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_below="@+id/rangeLayout"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FPS: "
+                android:textColor="#ffffff"
+                android:id="@+id/textView2"/>
+
+            <TextView
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rangeLayout"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_margin="6dp">
+
+            <SeekBar
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:max="100"
+                android:longClickable="false"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:progress="40"/>
+
+            <TextView
+                android:textColor="#ffffff"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="123"
+                android:id="@+id/textView16"
+                android:gravity="right"/>
+
+            <TextView
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km"
+                android:id="@+id/textView14"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/details_sliding_container"/>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
